@@ -1,8 +1,5 @@
-import 'dart:typed_data';
-
 import 'package:drizzle/widgets/markers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:latlong2/latlong.dart';
@@ -95,17 +92,8 @@ class _MapPageState extends State<MapPage> {
             ),
           ],
           children: [
-            // TileLayer(
-            //   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            //   userAgentPackageName: 'wtf.iamsihu.drizzle',
-            // ),
             TileLayer(
-              urlTemplate:
-                  "https://api.mapbox.com/styles/v1/s1hu/cle6s8lxl001301msrvtxvss5/wmts?access_token=pk.eyJ1IjoiczFodSIsImEiOiJjbGU2czNxd2owODRrM3FwNnoxZ2x5dTE5In0.3Hm0-wvh7fFUaUulR2soNQ",
-              additionalOptions: const {
-                "access_token":
-                    "pk.eyJ1IjoiczFodSIsImEiOiJjbGU2czNxd2owODRrM3FwNnoxZ2x5dTE5In0.3Hm0-wvh7fFUaUulR2soNQ",
-              },
+              urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               userAgentPackageName: 'wtf.iamsihu.drizzle',
             ),
             MarkerClusterLayerWidget(
@@ -113,7 +101,7 @@ class _MapPageState extends State<MapPage> {
               options: MarkerClusterLayerOptions(
                 markers: genToiletMarker(),
                 builder: (BuildContext context, List<Marker> markers) {
-                  return const Icon(Icons.man);
+                  return Image.asset("assets/images/toilet.png");
                 },
               ),
             ),

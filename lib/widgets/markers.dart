@@ -58,7 +58,7 @@ class ToiletMarker extends Marker {
                   ),
                 ];
               },
-              child: const Icon(Icons.man),
+              child: Image.asset("assets/images/toilet.png"),
             );
           },
         );
